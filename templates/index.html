@@ -1,0 +1,134 @@
+$def with (name, myshares, tally, nameround, block, round, blocksleft, timeleft, eta, activeround, activeshares, activepayout, activeroundstart, activeroundend, activeendtime, activetimeleft, devpershare, breakdown, prev)
+<div id="container" style="width:1200px; margin: 0 auto;">
+<div id="container" style="width:800px; margin:0; float: left">
+	<div>
+		<h1>Current Submission Round Details</h1>
+		<table class="inlineTable">
+			<tr>
+				<th>Round $activeround
+				<td>Block $activeroundstart to $activeroundend
+			<tr>
+				<th>Payout on block
+				<td>$(activeroundend + 2700)
+			<tr>
+				<th>Currently Allocated Shares<br><br>Note: Not final until deadline
+				<td>$(activeshares) Shares: $activepayout dvc per share<br><br>Until deadline, expect shares to go<br> up, and dvc per share to go down.
+			<tr>
+				<th>Submission Deadline
+				<td>$activetimeleft
+			<tr>
+				<th>Submission Deadline (date)
+				<td>$activeendtime
+		</table>
+		$if breakdown != None:
+			<table id="breakdown" class="inlineTable">
+				<tr>
+					<th>Bitcoin Share List
+					<td>$breakdown['BitcoinSL']
+				<tr class="alt">
+					<th>Devcoin Share List
+					<td>$breakdown['DevcoinSL']
+				<tr>
+					<th>Bounties
+					<td>$breakdown['Bounty']
+				<tr class="alt">
+					<th>Devtome
+					<td>$breakdown['Devtome']
+				<tr>
+					<th>Marketing
+					<td>$breakdown['Marketing']
+				<tr class="alt">
+					<th>Ratings
+					<td>$breakdown['Rating']
+				<tr>
+					<th>Administration
+					<td>$breakdown['Admin']
+			</table>
+		<h1>Devcoin Next Payment Round Countdown</h1>
+		<table>
+			<tr>
+				<th>Block Count
+				<td>$block
+			<tr>
+				<th>Blocks to go before payout begins
+				<td>$blocksleft
+			<tr>
+				<th>Round to be paid out
+				<td>$round
+			<tr>
+				<th>Devcoins per share
+				<td>$devpershare
+			<tr>
+				<th>Estimated time remaining
+				<td>$timeleft
+			<tr>	
+				<th>Estimated time of arrival
+				<td>$eta
+		</table>
+		<h1>Devcoin Payment Round in Progress</h1>
+		<table>
+			<tr>
+				<th>Round being paid out
+				<td>$prev['round']
+			<tr>
+				<th>Devcoins per share
+				<td>$prev['devpershare']
+			<tr>
+				<th>Estimated time remaining
+				<td>$timeleft
+			<tr>
+				<th>Estimated time of completion
+				<td>$eta
+		</table>		
+	</div>
+	<div>	<br><br>
+		Want to know how much your coins are worth? <a href="http://dvcusdchart.blisteringdevelopers.com">Click here for a DVC / USD Chart</a>
+	</div>
+</div>
+<div id="container" style="width:400px;float:right;">
+	<div>
+	<h1>User Payments by Round</h1>
+	<form action="/shares" method="POST">
+		<table id="userstats">
+			<tr>
+				<th>Username
+				$if name != None:
+					<td><input type="text" name="name" value="$name">
+				$else:
+					<td><input type="text" name="name">
+				<th>Round
+				$if nameround != None:
+					<td><input type="number" step="1.0" min="3" name="round" value="$nameround">
+				$else:
+					<td><input type="number" step="1.0" min="3" name="round">
+				<th><input type="submit" value="Retrieve">
+		</table>
+	</form>
+	$if name != None:
+		<br>
+		<table id="userstats" style="width:500px;"> 
+			<tr><th>Name<td>$name
+			<tr><th>Shares<td>$tally
+			<tr><th>Links<td>
+				<table>
+					$for row in myshares:
+						$if row[1] != None:
+							<a href="$row[1]">$row[0]<br>
+						$else:
+							$row[0]<br>
+				</table>
+		</table>		
+	</div>
+	<div>
+		<br><br>
+		<p>No ads. This site is fueled by love...and tips!<br><br>
+		DVC: 1HUnznpv5nh91vEzbwvYud9ieeBCgzuscF<br>
+		BTC: 1BmUAAMSq95kfXspPpabgXAKnpkfjAScNC<br>
+		LTC: LPLjKsoSyCQgfkUb2eQQoz18QMqYRr75fN<br><br>
+
+		<a href="http://www.devtome.com">Earn Devcoins for Writing</a><br>(ok plus one little ad, but only because it's awesome) 
+		</p>
+	</div>
+
+</div>	
+</div>
