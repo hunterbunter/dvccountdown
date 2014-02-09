@@ -1,0 +1,52 @@
+$def with (content)
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+	<meta name="description" content="The Devcoin Countdown Clock lets you see the deadline for the current round, when the next payments will begin, and when the current payments will be completed by, including how many devcoins you can expect to earn per share."/>
+	<meta name="keywords" content="devcoin, dvc, countdown clock, devtome, payment record, payment calculator, payments, payout information, share worth, round timer, coins per share"/>
+	<meta name="robots" content="INDEX, FOLLOW"/>
+<script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-46465497-1', 'blisteringdevelopers.com');
+  ga('send', 'pageview');
+
+</script>
+
+<style>
+	th { width: 250px; }
+	.inlineTable { display: inline-block; padding: 6px; border: 0px solid; vertical-align: top;} 
+
+	#breakdown tr {color: #000000; background-color: #F5F5F5; }
+	#breakdown tr.alt{color: #000000; background-color: #FFFFFF; }
+	#breakdown tr.alt2{color: #000000; background-color: #DDDDDD; }
+	#breakdown th, #breakdown td { padding: 3px; }
+	#breakdown th { width: 150px; border: 0px;}
+	#breakdown td { width: 100px; border: 0px; }
+	#userstats table { width: 200px; border: 0px solid black; }
+	#userstats th { width: 80px; padding: 1px; border: 0px; }
+	#userstats td { width: 100px; padding: 1px; border: 0px; } 
+	table, th, td { border: 1px solid black; padding: 6px; border-collapse: collapse; }
+	
+	div.centered
+	{
+		text-align: center;
+	}
+	div.centered table
+	{
+		margin:0 auto;
+		text-align:left;
+	}
+</style>
+
+	<title>Devcoin Countdown Clock</title>
+</head>
+<body>
+
+$:content
+
+</body>
+</html>

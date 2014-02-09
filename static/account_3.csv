@@ -1,0 +1,35 @@
+Format,pluribusunum
+_beginpeers
+http://galaxies.mygamesonline.org/receiver.csv
+https://raw.github.com/Unthinkingbit/charity/master/receiver.csv
+https://raw.github.com/jackjack-jj/charity/master/receiver.csv
+_endpeers
+_begincoins
+1JEnRbir5ceXZYH7HXyQZabM4LRQU7MRsx
+1FyMZskjC9fXSYATVXP3TH3NNeD9E1Pynp
+1DbeWKCxnVCt3sRaSAmZLoboqr8pVyFzP1
+1Pc9g2fmDML3EQ1r35KR4cRABwXE9nmHXW
+19QkqAza7BHFTuoz9N8UQkryP4E9jHo4N3
+129ZQG33GmqYRVSCw2hw7zmDUCvvMsuGbC
+1B2fZN58SD4JqaTitHmBLcSo89GfUtvWZ3
+1PWC7PNHL1SgvZaN7xEtygenKjWobWsCuf
+1KHAL8bUjnkMRMg9yd2dNrYnJgZGH8Nj6T
+1NWc7N4FAs55hJ1xdTf3KWHZD89yn2PQKV
+1MDDh2h4cAZDafgc94mr9q95dhRYcJbNQo
+1ABvQwiuCnySQqBzruaAcdrkgYae9LoqWz
+14V7RiwD3joqDF2Jv6zst3ZnQsR686u9iH
+1MbRAfeayy7bYfJ8yBVKTt41nyiGhVAz62
+1JBMattRztKDF2KRS3vhjJXA7h47NEsn2c
+126VZtqifE91nrBsXRkjZRMkTTvSTEMHPC
+1HZNsUqQxKVLmfPfCAzLwrnVDzx8CxwxnM
+163Pv9cUDJTNUbadV4HMRQSSj3ipwLURRc
+17vec4jQGCzMEsTnivizHPaowE715tu2CB
+1K44aRWSLkmC5KLvzp8awetNob6H99L9ND
+199tVFYQyA98C5rdcnNj3zRpRCYMLmyRdn
+19piwg8kyW5unDpLjYjbvE6GGvtAfghT8c-Caston,2/5-https://bitcointalk.org/index.php?topic=24813.msg423232#msg423232
+1M1BzQBpb8sbCuNzBTaae9PBdvjLthVrbR-Jackjack,2/5-https://bitcointalk.org/index.php?topic=34586.msg432697#msg432697,1-https://bitcointalk.org/index.php?topic=24813.msg429585#msg429585,2/5-File Administrator
+121Pb2BBrU7C61vBdWCKVuFFmaEZr6xFAX-Markm,1-General administrator(vote:1, receiver file:2, accountant or auditor:1, almoner:2)
+1Fhex5BvBGaChJqK75Z6MPxtK9muSsScKC-Shattienator,1/5-https://bitcointalk.org/index.php?topic=34586.msg447332#msg447332,1/5-https://bitcointalk.org/index.php?topic=34586.80,2/5-https://bitcointalk.org/index.php?topic=34586.msg437059#msg437059
+1QFNbLgpFKwFYKLNc9XkYbzgCryd3XYfuX-Twobits,1/5-https://bitcointalk.org/index.php?topic=34586.msg433925#msg433925,1/5-https://bitcointalk.org/index.php?topic=34586.msg437186#msg437186
+17vec4jQGCzMEsTnivizHPaowE715tu2CB-Unthinkingbit,1-General administrator
+_endcoins

@@ -1,4 +1,4 @@
-$def with (name, myshares, tally, nameround, block, round, blocksleft, timeleft, eta, activeround, activeshares, activepayout, activeroundstart, activeroundend, activeendtime, activetimeleft, devpershare, breakdown, prev)
+$def with (name, myshares, tally, nameround, block, round, blocksleft, timeleft, eta, activeround, activepayout, activeroundstart, activeroundend, activeendtime, activetimeleft, devpershare, breakdown, breakdown2, breakdown3, prev)
 <div id="container" style="width:1200px; margin: 0 auto;">
 <div id="container" style="width:800px; margin:0; float: left">
 	<div>
@@ -12,7 +12,10 @@ $def with (name, myshares, tally, nameround, block, round, blocksleft, timeleft,
 				<td>$(activeroundend + 2700)
 			<tr>
 				<th>Currently Allocated Shares<br><br>Note: Not final until deadline
-				<td>$(activeshares) Shares: $activepayout dvc per share<br><br>Until deadline, expect shares to go<br> up, and dvc per share to go down.
+				$if breakdown != None:
+					<td>$(breakdown['TotalShares']) Shares: $activepayout dvc per share<br><br>Until deadline, expect shares to go<br> up, and dvc per share to go down.
+				$else:
+					<td>0 Shares: $activepayout dvc per share<br><br>Until deadline, expect shares to go<br> up, and dvc per share to go down.
 			<tr>
 				<th>Submission Deadline
 				<td>$activetimeleft
@@ -32,20 +35,27 @@ $def with (name, myshares, tally, nameround, block, round, blocksleft, timeleft,
 					<th>Bounties
 					<td>$breakdown['Bounty']
 				<tr class="alt">
+					<th>Business Bounties
+					<td>$breakdown['BusinessBounty']
+				<tr>
 					<th>Devtome
 					<td>$breakdown['Devtome']
-				<tr>
+				<tr class="alt">
 					<th>Marketing
 					<td>$breakdown['Marketing']
-				<tr class="alt">
+				<tr>
 					<th>Ratings
 					<td>$breakdown['Rating']
-				<tr>
+				<tr class="alt">
 					<th>Administration
 					<td>$breakdown['Admin']
+				<tr class="alt2">	
+					<th>Total Shares
+					<td>$breakdown['TotalShares']
 			</table>
+		<br/>
 		<h1>Devcoin Next Payment Round Countdown</h1>
-		<table>
+		<table class="inlineTable">
 			<tr>
 				<th>Block Count
 				<td>$block
@@ -57,7 +67,10 @@ $def with (name, myshares, tally, nameround, block, round, blocksleft, timeleft,
 				<td>$round
 			<tr>
 				<th>Devcoins per share
-				<td>$devpershare
+				$if block < activeroundstart:
+					<td>$devpershare (Not yet finalized)
+				$else:
+					<td>$devpershare 
 			<tr>
 				<th>Estimated time remaining
 				<td>$timeleft
@@ -65,8 +78,40 @@ $def with (name, myshares, tally, nameround, block, round, blocksleft, timeleft,
 				<th>Estimated time of arrival
 				<td>$eta
 		</table>
+		$if breakdown2 != None:
+			<table id="breakdown" class="inlineTable">
+				<tr>
+					<th>Bitcoin Share List
+					<td>$breakdown2['BitcoinSL']
+				<tr class="alt">
+					<th>Devcoin Share List
+					<td>$breakdown2['DevcoinSL']
+				<tr>
+					<th>Bounties
+					<td>$breakdown2['Bounty']
+				<tr class="alt">
+					<th>Business Bounties
+					<td>$breakdown2['BusinessBounty']
+				<tr>
+					<th>Devtome
+					<td>$breakdown2['Devtome']
+				<tr class="alt">
+					<th>Marketing
+					<td>$breakdown2['Marketing']
+				<tr>
+					<th>Ratings
+					<td>$breakdown2['Rating']
+				<tr class="alt">
+					<th>Administration
+					<td>$breakdown2['Admin']
+				<tr class="alt2">	
+					<th>Total Shares
+					<td>$breakdown2['TotalShares']
+			</table>
+		<br/>
+
 		<h1>Devcoin Payment Round in Progress</h1>
-		<table>
+		<table class="inlineTable">
 			<tr>
 				<th>Round being paid out
 				<td>$prev['round']
@@ -80,6 +125,38 @@ $def with (name, myshares, tally, nameround, block, round, blocksleft, timeleft,
 				<th>Estimated time of completion
 				<td>$eta
 		</table>		
+		$if breakdown3 != None:
+			<table id="breakdown" class="inlineTable">
+				<tr>
+					<th>Bitcoin Share List
+					<td>$breakdown3['BitcoinSL']
+				<tr class="alt">
+					<th>Devcoin Share List
+					<td>$breakdown3['DevcoinSL']
+				<tr>
+					<th>Bounties
+					<td>$breakdown3['Bounty']
+				<tr class="alt">
+					<th>Business Bounties
+					<td>$breakdown3['BusinessBounty']
+				<tr>
+					<th>Devtome
+					<td>$breakdown3['Devtome']
+				<tr class="alt">
+					<th>Marketing
+					<td>$breakdown3['Marketing']
+				<tr>
+					<th>Ratings
+					<td>$breakdown3['Rating']
+				<tr class="alt">
+					<th>Administration
+					<td>$breakdown3['Admin']
+				<tr class="alt2">	
+					<th>Total Shares
+					<td>$breakdown3['TotalShares']
+			</table>
+		<br/>
+
 	</div>
 	<div>	<br><br>
 		Want to know how much your coins are worth? <a href="http://dvcusdchart.blisteringdevelopers.com">Click here for a DVC / USD Chart</a>
@@ -108,6 +185,7 @@ $def with (name, myshares, tally, nameround, block, round, blocksleft, timeleft,
 		<br>
 		<table id="userstats" style="width:500px;"> 
 			<tr><th>Name<td>$name
+			<tr><th>Devtome Stats<td><a href='/devtome'>click here
 			<tr><th>Shares<td>$tally
 			<tr><th>Links<td>
 				<table>

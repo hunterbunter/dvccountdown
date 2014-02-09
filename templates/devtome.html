@@ -1,0 +1,74 @@
+$def with (name, nameround, stats, tally, ratings)
+<div id="container" style="margin: 0 auto;">
+	<div class = "centered">
+	<h1>User Devtome Stats by Round</h1>
+	<form action="/devtome" method="POST">
+		<table id="userstats">
+			<tr>
+				<th>Username
+				$if name != None:
+					<td><input type="text" name="name" value="$name">
+				$else:
+					<td><input type="text" name="name">
+				<th>Round
+				$if nameround != None:
+					<td><input type="number" step="1.0" min="22" name="round" value="$nameround">
+				$else:
+					<td><input type="number" step="1.0" min="22" name="round" value="22">
+				<th><input type="submit" value="Retrieve">
+		</table>
+	</form>
+	<br><a href="/">Return to Block Counter</a><br>
+	$if stats != None:
+		<br><h4>Number of writers: $tally</h4>
+		<br>
+		<table style="width:1200px; margin-left: auto; margin-right: auto;">
+			$for i in range(len(stats)):
+			<tr>
+				$if i % 20 == 0:
+					$for j in range(len(stats[i])):
+						$if j % 13 == 0:
+							<th>$stats[0][0]
+						$if j != 0:
+							<th>$stats[0][j]
+					<tr>
+				$if i != 0:
+					$for j in range(len(stats[i])):
+						$if j % 13 == 0:
+							<th>$:stats[i][0]
+						$if j != 0:
+							<td>$stats[i][j]
+		</table>
+	$else:
+		<br>Data for round $nameround is currently unavailable.
+	</div>
+	$if name != "":
+		<div style="floag:left;">
+		<br><br><h2>$(name)'s Ratings</h2>
+		$if len(ratings) < 1:
+			<br>No Ratings
+		$else:
+			<table style="margin-left: 0;">
+				<tr><td><b>Author</b><td><b>Rater</b><td><b>Article</b><td><b>Rating</b><td><b>Comment</b>
+				$for row in ratings:
+					<tr>
+					<td><a href="$row.author_url">$row.author</a>
+					<td><a href="$row.rater_url">$row.rater</a> 
+					<td><a href="$row.article_url">$row.article_url</a>
+					<td>$row.rating
+					<td>$:row.comment
+		</table>
+		</div>
+	
+	<div style="float:left;">
+		<br><br>
+		<p>No ads. This site is fueled by love...and tips!<br><br>
+		DVC: 1HUnznpv5nh91vEzbwvYud9ieeBCgzuscF<br>
+		BTC: 1BmUAAMSq95kfXspPpabgXAKnpkfjAScNC<br>
+		LTC: LPLjKsoSyCQgfkUb2eQQoz18QMqYRr75fN<br><br>
+
+		<a href="http://www.devtome.com">Earn Devcoins for Writing</a><br>(ok plus one little ad, but only because it's awesome) 
+		</p>
+	</div>
+
+</div>	
